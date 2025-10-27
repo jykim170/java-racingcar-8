@@ -11,13 +11,9 @@ import java.util.List;
 public class RacingController {
 
     public void run() {
-        try {
-            List<String> names = readCarNames();
-            int tryCount = readTryCount();
-            playGame(names, tryCount);
-        } catch (IllegalArgumentException e) {
-            System.out.println("[ERROR] " + e.getMessage());
-        }
+        List<String> names = readCarNames();   // 잘못되면 IllegalArgumentException 그대로 던짐
+        int tryCount = readTryCount();         // 잘못되면 그대로 던짐
+        playGame(names, tryCount);
     }
 
     private List<String> readCarNames() {
